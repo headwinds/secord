@@ -1,0 +1,49 @@
+# Create React App with Typescript 
+
+## Getting Started (prebuilt) 
+
+1. Update the application properties file with your database credentials 
+
+see src > main > resources > application.properties
+
+2. Run the App
+
+```
+gradle clean build
+
+```
+
+Open your browser to http://localhost:8080/demo/all
+
+
+## Getting Started (scratch)
+
+1. visit [spring initializer](https://start.spring.io/)
+
+Setup a new project with these settings:
+
+<img src="init-1.png" alt="cranes" width="500px" />
+
+<img src="init-2.png" alt="cranes" width="500px" />
+
+Generate and download the zip. Open it in your editor and launch a terminal.
+
+2. Install Create React App with typescript & add the [redux toolkit](https://redux-toolkit.js.org/)
+
+```
+cd src/main
+npx create-react-app webapp --template typescript
+yarn add @reduxjs/toolkit
+yarn add react-redux @types/react-redux
+```
+
+3. Update the application properties file with your database credentials 
+
+see src > main > resources > application.properties
+
+4. 
+
+Articles 
+
+* [Serving React apps from Spring Boot](https://blog.indrek.io/articles/serving-react-apps-from-spring-boot/)
+* [react & redux toolkit tutorial](https://redux-toolkit.js.org/tutorials/advanced-tutorial)
