@@ -23,31 +23,42 @@ const ColonistList: React.FunctionComponent<ColonistListProps> = ({ page }) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [issuesError, setIssuesError] = useState<Error | null>(null);
 
-  const getData = () => {
-    // async/await if failing to produce valid json for some reason?!
-    let xhr = new XMLHttpRequest();
-    const desiredUrl = `http://localhost:8080/demo/all`;
-    xhr.open("GET", desiredUrl);
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState !== 4) return;
-      if (xhr.status === 200) {
-        const colonists = JSON.parse(xhr.responseText);
+  const getData = async () => {
 
-        setColonists({ colonists });
+    setIsLoading(true);
+
+    const desiredUrl = `http://localhost:8080/demo/all`;
+
+    try {
+      const response = await fetch(desiredUrl);
+      if(!response) {
         setIsLoading(false);
-      } else {
-        setIssuesError(new Error("something went wrong"))
+        return setIssuesError(new Error("something went wrong"));
       }
-    };
-    xhr.send();
+    } catch(e) {
+      setIsLoading(false);
+       return setIssuesError(new Error("something went wrong"));
+    }
+
+    const response = await fetch(desiredUrl);
+    const json = await response.json();
+    const colonists = await json; 
+
+    setIsLoading(false);
+    return setColonists({ colonists });
   };
 
   useEffect(() => {
     if (!isLoading) {
-      getData();
-      setIsLoading(true);
+      //getData();
+      //setIsLoading(true);
     }
-  }, [page, isLoading]);
+    getData();
+  }, [page]);
+
+  //if (!isLoading) getData();
+  //setIsLoading(true);
+  //getData();
 
   const { colonists } = colonistsResult;
   const list = colonists.map(({ name }: Colonist, idx: number) => {
@@ -56,6 +67,7 @@ const ColonistList: React.FunctionComponent<ColonistListProps> = ({ page }) => {
 
   return (
     <div>
+      {isLoading && <p>loading...</p>}
       <ul>{list}</ul>
       {issuesError && <p>{issuesError.message}</p>}
     </div>
