@@ -1,7 +1,8 @@
-# Secord
-## Java (Gradle) PostgreSQL Backend with a React/Redux/Typescript Frontend
+## Secord 🎖️
+### Java (Gradle) PostgreSQL Backend with a React/Redux/Typescript Frontend
 
-## Getting Started (prebuilt) 
+
+# Getting Started (prebuilt) 
 
 1. Update the application properties file with your database credentials 
 
@@ -21,7 +22,7 @@ Open your browser to http://localhost:8080 to see the React frontend
 
 Open your browser to http://localhost:8080/demo/all to see a sample JSON response 
 
-## Getting Started (scratch)
+# Getting Started (scratch)
 
 1. visit [spring initializer](https://start.spring.io/)
 
