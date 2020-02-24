@@ -9,12 +9,12 @@ see src > main > resources > application.properties
 2. Run the App
 
 ```
-gradle clean build
-
+gradle bootRun
 ```
 
-Open your browser to http://localhost:8080/demo/all
+Open your browser to http://localhost:8080 to see the React frontend
 
+Open your browser to http://localhost:8080/demo/all to see a sample JSON response 
 
 ## Getting Started (scratch)
 
@@ -22,9 +22,9 @@ Open your browser to http://localhost:8080/demo/all
 
 Setup a new project with these settings:
 
-<img src="init-1.png" alt="cranes" width="500px" />
+<img src="init-1.png" alt="cranes" width="800px" />
 
-<img src="init-2.png" alt="cranes" width="500px" />
+<img src="init-2.png" alt="cranes" width="800px" />
 
 Generate and download the zip. Open it in your editor and launch a terminal.
 
@@ -41,7 +41,6 @@ yarn add react-redux @types/react-redux
 
 see src > main > resources > application.properties
 
-4. 
 
 Articles 
 
