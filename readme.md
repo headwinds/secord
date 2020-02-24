@@ -1,4 +1,5 @@
-# Create React App with Typescript 
+# Secord
+## Java (Gradle) PostgreSQL Backend with a React/Redux/Typescript Frontend
 
 ## Getting Started (prebuilt) 
 
