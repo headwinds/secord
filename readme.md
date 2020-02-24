@@ -6,7 +6,11 @@
 
 see src > main > resources > application.properties
 
-2. Run the App
+2. populate the default postgres database with a colonist table and some colonists
+
+see scout.sql
+
+3. Run the App
 
 ```
 gradle bootRun
